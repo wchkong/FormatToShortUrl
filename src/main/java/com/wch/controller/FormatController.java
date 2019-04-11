@@ -3,7 +3,6 @@ package com.wch.controller;
 import com.wch.model.APIResponse;
 import com.wch.model.FormatUrl;
 import com.wch.service.FormatUrlService;
-import com.wch.utils.FormatUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
@@ -57,8 +56,10 @@ public class FormatController extends BaseController{
         if (StringUtils.isEmpty(shortUrl)) {
             return APIResponse.error("输入短链为空！请重新输入");
         }
-        int count = formatUrlService.getRecordCount(shortUrl);
-        return new APIResponse(200, "成功", count);
+        FormatUrl formatUrl = formatUrlService.getFormatUrl(shortUrl);
+
+        // 这里返回整个bean的原因是把长链接和其访问次数一并返回，方便查看
+        return new APIResponse(200, "成功", formatUrl);
     }
 
 }

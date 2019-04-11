@@ -46,4 +46,11 @@ public interface FormatUrlService {
      * @return
      */
     String formatUrl(String longUrl);
+
+    /**
+     * 通过短链接获取整个bean
+     * @param shortUrl
+     * @return
+     */
+    FormatUrl getFormatUrl(String shortUrl);
 }

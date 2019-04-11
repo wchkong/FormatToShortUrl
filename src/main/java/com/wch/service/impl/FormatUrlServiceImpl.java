@@ -114,6 +114,12 @@ public class FormatUrlServiceImpl implements FormatUrlService {
         return FormatUtils.randomShortUrl(length);
     }
 
+    @Override
+    public FormatUrl getFormatUrl(String shortUrl) {
+        FormatUrl formatUrl = formatUrlMapper.selectByShortUrl(shortUrl);
+        return formatUrl;
+    }
+
 
     private int getUrlLastId() {
         int lastId = formatUrlMapper.selectUrlLastId();
