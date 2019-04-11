@@ -14,11 +14,8 @@ import java.util.Date;
 public class FormatUrl {
 
     private int id;
-    @Column(name = "long_url")
     private String longUrl;
-    @Column(name = "short_url")
     private String shortUrl;
     private int count;
-    @Column(name = "create_date")
     private Date createTime;
 }
