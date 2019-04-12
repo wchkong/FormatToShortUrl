@@ -1,7 +1,5 @@
 package com.wch.model;
 
-import javax.persistence.*;
-
 import lombok.Data;
 import lombok.ToString;
 
@@ -10,7 +8,6 @@ import java.util.Date;
 
 @Data
 @ToString
-@Table(name = "short_urls")
 public class FormatUrl {
 
     private int id;
